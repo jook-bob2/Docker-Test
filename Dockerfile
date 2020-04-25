@@ -1,5 +1,5 @@
 # Start with a base image containing Java runtime
-FROM rtfpessoa/ubuntu-jdk8
+FROM openjdk:8-jdk-alpine
 
 # Add Author info
 MAINTAINER Jinseok Kim"qwefk123@naver.com"
@@ -14,7 +14,7 @@ EXPOSE 8081
 ARG JAR_FILE=build/libs/docker-test-0.0.1-SNAPSHOT.jar
 
 # Add the application's jar to the container
-ADD ${JAR_FILE} docker-test.jar
+COPY ${JAR_FILE} docker-test.jar
 
 # Run the jar file
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/docker-test.jar"]
