@@ -11,7 +11,7 @@ VOLUME /tmp
 EXPOSE 8081
 
 # The application's jar file
-ARG JAR_FILE=build/libs/docker-test-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/*.jar
 
 # Add the application's jar to the container
 COPY ${JAR_FILE} docker-test.jar
