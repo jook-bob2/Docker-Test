@@ -14,7 +14,7 @@ EXPOSE 8081
 ARG JAR_FILE=build/libs/*.jar
 
 # Add the application's jar to the container
-COPY ${JAR_FILE} docker-test.jar
+# COPY ${JAR_FILE} docker-test.jar
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/docker-test.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar",${JAR_FILE}]
