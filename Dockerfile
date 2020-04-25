@@ -17,4 +17,4 @@ ARG JAR_FILE=build/libs/*.jar
 # COPY ${JAR_FILE} docker-test.jar
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar",${JAR_FILE}]
+ENTRYPOINT ["java","-jar",${JAR_FILE}]
