@@ -14,7 +14,7 @@ EXPOSE 8080
 # ARG JAR_FILE=build/libs/*.jar
 
 # Add the application's jar to the container
-ADD build/libs/*.jar app.jar
+COPY build/libs/*.jar app.jar
 
 # Run the jar file
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
