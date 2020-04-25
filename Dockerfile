@@ -1,5 +1,5 @@
 # Start with a base image containing Java runtime
-FROM openjdk:8-jdk-alpine
+FROM codenvy/jdk8_maven3_tomcat8
 
 # Add Author info
 MAINTAINER Jinseok Kim"qwefk123@naver.com"
@@ -17,4 +17,4 @@ ARG JAR_FILE=build/libs/*.jar
 ADD ${JAR_FILE} app.jar
 
 # Run the jar file
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
