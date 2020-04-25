@@ -1,8 +1,8 @@
 # Start with a base image containing Java runtime
-FROM java:8
+FROM rtfpessoa/ubuntu-jdk8
 
 # Add Author info
-LABEL maintainer=Jinseok Kim"qwefk123@naver.com"
+MAINTAINER Jinseok Kim"qwefk123@naver.com"
 
 # Add a volume to /tmp
 VOLUME /tmp
