@@ -16,6 +16,11 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
+	@GetMapping(value = "/")
+	public String index() {
+		return "redirect:/board/write.do";
+	}
+	
 	@GetMapping(value = "board/write.do")
 	public String openBoardWrite(@RequestParam(value = "idx", required = false) Long idx, Model model) {
 		
@@ -33,12 +38,12 @@ public class BoardController {
 	
 	@PostMapping(value = "board/register.do")
 	public String registerBoard(final BoardDTO params) {
-		System.out.println("등록!");
+		System.out.println("�벑濡�!");
 		boolean isRegistered = boardService.registerBoard(params);
-		System.out.println("결과 : " + isRegistered);
+		System.out.println("寃곌낵 : " + isRegistered);
 		if(!isRegistered) {
 			
 		}
-		return "redirect:/board/list.do";
+		return "redirect:/board/write.do";
 	}
 }
