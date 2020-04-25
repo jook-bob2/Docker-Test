@@ -9,6 +9,7 @@ build/test-results/
 build/tmp/
 build/jib-image.digest
 build/jib-image.id
+!build/libs/**.jar
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
