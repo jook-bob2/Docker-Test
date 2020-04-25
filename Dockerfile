@@ -1,5 +1,5 @@
 # Start with a base image containing Java runtime
-FROM openjdk:8-jre
+FROM openjdk:8-jdk-alpine
 
 # Add Author info
 MAINTAINER Jinseok Kim"qwefk123@naver.com"
